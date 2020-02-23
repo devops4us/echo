@@ -1,0 +1,11 @@
+.settings/
+target/
+bin/
+.classpath
+.project
+.factorypath
+.apt_generated
+**/*.log
+**/package-lock.json
+**/node_modules
+.DS_Store
