@@ -9,7 +9,7 @@ FROM open-liberty:19.0.0.9-kernel-java11
 
 COPY src/main/liberty/config/server.xml /config/
 
-COPY --from=0 /usr/src/app/target/echo.tar.gz /config/apps/
+COPY --from=0 /usr/src/app/target/echo.war /config/apps/
 
 # This script will add the requested XML snippets, grow image to be fit-for-purpose and apply interim fixes
 # https://github.com/WASdev/ci.docker
