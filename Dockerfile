@@ -5,11 +5,11 @@ COPY pom.xml /usr/src/app
 RUN mvn -f /usr/src/app/pom.xml clean package
 
 
-FROM open-liberty:19.0.0.9-kernel-java11
+FROM open-liberty:kernel
 
 COPY --chown=1001:0 src/main/liberty/config/server.xml /config/
 
-COPY --from=0 --chown=1001:0 /usr/src/app/target/echo.war /config/apps/
+COPY --from=0 --chown=1001:0 /usr/src/app/target/echo.war /config/dropins/
 
 # This script will add the requested XML snippets, grow image to be fit-for-purpose and apply interim fixes
 # https://github.com/WASdev/ci.docker
